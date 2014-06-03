@@ -1,0 +1,72 @@
+@import 'helpers';
+@import url(../fonts/clear-sans.css);
+
+$gamewidth: 500px;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #faf8ef;
+  color: #451a0a;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  font-style: oblique; 
+  background-color: #FFF;
+    margin: 30px;
+    margin-top: 10px; 
+  
+  }
+  
+
+  
+#contentContainer {	
+    width: $gamewidth;
+    height: $gamewidth;
+    border-width: 5px;
+    border-style: solid;
+    border-color:#291400;
+    overflow: hidden;
+    background-color: #FFFFC2;
+    cursor: pointer;    
+    z-index: 1;
+    float: middle;
+}
+.td {
+	text-align: center;
+}
+.cell {            
+    overflow: hidden;
+    font-size: 34px; 
+    
+    z-index: 3; 
+    display: table-cell;
+    text-align: center;    
+    vertical-align: middle;
+    color: #CCAB7A;  
+}  
+
+.tile {
+	background-image:url('../img/tile.gif');
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+    text-align: center;    
+    overflow: hidden; 
+    z-index: 3; 
+    font-size: 35px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@include keyframes(move-up) {
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
+
+
