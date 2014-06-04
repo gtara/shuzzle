@@ -1,20 +1,21 @@
 //HtmlHandler clears/creates the html inside the container
 function HtmlHandler () {
 	this.htmlContainer = document.querySelector("#contentContainer");
-	
+	this.movesCounter = document.querySelector("#current-moves");
 };
 
 HtmlHandler.prototype.clearContainer = function (container) {
 	while (container.firstChild) {
 	    container.removeChild(container.firstChild);
 	}
+	this.movesCounter.textContent = "";
 };
 
 HtmlHandler.prototype.applyClasses = function (element, classes) {
 	  element.setAttribute("class", classes.join(" "));
 };
 
-HtmlHandler.prototype.addHtmlForGrid = function(grid) {
+HtmlHandler.prototype.addHtmlForGrid = function(grid, moves) {
 	var that = this;
 	window.requestAnimationFrame(function() {
 	that.clearContainer(that.htmlContainer);
@@ -53,7 +54,7 @@ HtmlHandler.prototype.addHtmlForGrid = function(grid) {
 	that.htmlContainer.appendChild(table);
 	var gridWidth = that.htmlContainer.clientWidth;	  
 	var cellWidth = Math.floor((gridWidth ) / grid.size - 8) ;
-
+	that.movesCounter.textContent = moves.toString();
 	$(".tile").css("width", cellWidth + "px");
 	$(".tile").css("height", cellWidth + "px");
 	$(".cell").css("width", cellWidth + "px");

@@ -11,6 +11,7 @@ function GameManager (size, ProvidedHtmlHandler, ProvidedStorageManager, Provide
 	this.htmlContainer = document.querySelector("#contentContainer");
 	this.htmlContainer.addEventListener("click", this.mouseHandler.getMouseClickPosition.bind(this.mouseHandler), false);
 	this.mouseHandler.addCallback("move", this.move.bind(this));
+	this.moves = 0;
 	this.refresh();	
 
 };
@@ -18,20 +19,18 @@ function GameManager (size, ProvidedHtmlHandler, ProvidedStorageManager, Provide
 GameManager.prototype.calculateWhichTileWasTouched= function(positionInPixels) {			
 	var gridWidth = this.htmlContainer.clientWidth;	  
 	var cellWidth = Math.floor((gridWidth ) / this.size) ;
-	
-		
 	var divX = Math.floor (positionInPixels.x / cellWidth) ;
 	var divY = Math.floor (positionInPixels.y / cellWidth) ;
 	return new Position(divX, divY);
 };
 
-GameManager.prototype.move = function (positionInPixels) {		
-	var tilePosition = this.calculateWhichTileWasTouched(positionInPixels) ;
-	console.log(tilePosition.serialize());
+GameManager.prototype.move = function (positionInPixels) {
+	this.moves += 1;
+	var tilePosition = this.calculateWhichTileWasTouched(positionInPixels) ;	
 	this.grid.shiftCells(tilePosition);
 	this.refresh();
 };
 
 GameManager.prototype.refresh = function () {	
-	this.htmlHandler.addHtmlForGrid(this.grid);
+	this.htmlHandler.addHtmlForGrid(this.grid, this.moves);
 };
