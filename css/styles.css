@@ -1,0 +1,148 @@
+@import url(../fonts/clear-sans.css);
+/* line 6, ../scss/styles.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #faf8ef;
+  color: #451a0a;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #FFF;
+}
+
+/* line 17, ../scss/styles.scss */
+body {
+  margin: 80px 0;
+}
+
+/* line 21, ../scss/styles.scss */
+h1.title {
+  font-size: 80px;
+  font-weight: bold;
+  color: #FFAD5C;
+  margin: 0;
+  display: block;
+  float: left;
+}
+
+/* line 30, ../scss/styles.scss */
+h5.title {
+  font-size: 18px;
+  color: #FFAD5C;
+  margin: 0;
+  display: block;
+  float: left;
+}
+
+/* line 38, ../scss/styles.scss */
+.counters-container {
+  float: right;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border-width: 3px;
+  border-color: #451a0a;
+  z-index: 3;
+}
+
+/* line 49, ../scss/styles.scss */
+.moves-counter {
+  position: relative;
+  display: inline-block;
+  font-size: 25px;
+  height: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* line 59, ../scss/styles.scss */
+#contentContainer {
+  width: 500px;
+  height: 500px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #291400;
+  overflow: hidden;
+  background-color: #FFFFC2;
+  cursor: pointer;
+  z-index: 1;
+  float: middle;
+}
+
+/* line 72, ../scss/styles.scss */
+.outer_container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+/* line 77, ../scss/styles.scss */
+.td {
+  text-align: center;
+}
+
+/* line 80, ../scss/styles.scss */
+.cell {
+  overflow: hidden;
+  font-size: 34px;
+  z-index: 3;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #CCAB7A;
+}
+
+/* line 91, ../scss/styles.scss */
+.tile {
+  background-image: url("../img/tile.gif");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+  overflow: hidden;
+  z-index: 3;
+  font-size: 35px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@-webkit-keyframes move-up {
+  /* line 104, ../scss/styles.scss */
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  /* line 109, ../scss/styles.scss */
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes move-up {
+  /* line 104, ../scss/styles.scss */
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  /* line 109, ../scss/styles.scss */
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
+
+@keyframes move-up {
+  /* line 104, ../scss/styles.scss */
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  /* line 109, ../scss/styles.scss */
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
